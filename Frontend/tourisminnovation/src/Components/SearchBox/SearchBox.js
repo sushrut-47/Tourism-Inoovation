@@ -1,105 +1,150 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './SearchBox.css';
 
 function SearchBox() {
-  const [destination, setDestination] = useState('');
-  const [travellers, setTravellers] = useState(2);
-  const [budget, setBudget] = useState('');
+  const navigate = useNavigate();
+
+  const [destination, setDestination] =
+    useState('');
+
+  const [travellers, setTravellers] =
+    useState(2);
+
+  const [budget, setBudget] =
+    useState(50000);
+
 
   const handleSearch = (event) => {
     event.preventDefault();
 
-    console.log({
-      destination,
-      travellers,
-      budget,
-    });
-
-    alert(
-      `Searching trips to ${destination || 'your destination'}`
+    navigate(
+      `/search?destination=${encodeURIComponent(
+        destination || 'Goa'
+      )}&travellers=${travellers}&budget=${budget}`
     );
   };
 
-  return (
-    <form className="search-box" onSubmit={handleSearch}>
 
-      <div className="search-field destination-field">
-        <span className="search-icon">📍</span>
+  return (
+    <form
+      className="search-box"
+      onSubmit={handleSearch}
+    >
+
+      <div className="search-field">
+
+        <span className="search-field-icon">
+          ♧
+        </span>
 
         <div>
-          <label>Where</label>
+
+          <label>
+            Where to?
+          </label>
 
           <input
             type="text"
-            placeholder="Where do you want to go?"
             value={destination}
             onChange={(event) =>
-              setDestination(event.target.value)
+              setDestination(
+                event.target.value
+              )
             }
+            placeholder="Destination"
           />
+
         </div>
+
       </div>
 
+
       <div className="search-field">
-        <span className="search-icon">📅</span>
+
+        <span className="search-field-icon">
+          □
+        </span>
 
         <div>
-          <label>When</label>
+
+          <label>
+            Budget
+          </label>
 
           <input
-            type="text"
-            placeholder="Add dates"
-            onFocus={(event) => {
-              event.target.type = 'date';
-            }}
+            type="number"
+            value={budget}
+            onChange={(event) =>
+              setBudget(
+                event.target.value
+              )
+            }
+            placeholder="₹50,000"
           />
+
         </div>
+
       </div>
 
-      <div className="search-field">
-        <span className="search-icon">👥</span>
+
+      <div className="search-field travellers-field">
+
+        <span className="search-field-icon">
+          ♧
+        </span>
 
         <div>
-          <label>Travellers</label>
+
+          <label>
+            Travellers
+          </label>
 
           <select
             value={travellers}
             onChange={(event) =>
-              setTravellers(event.target.value)
+              setTravellers(
+                event.target.value
+              )
             }
           >
-            <option value="1">1 Traveller</option>
-            <option value="2">2 Travellers</option>
-            <option value="3">3 Travellers</option>
-            <option value="4">4 Travellers</option>
-            <option value="5">5 Travellers</option>
-            <option value="6">6 Travellers</option>
+
+            <option value="1">
+              1 traveller
+            </option>
+
+            <option value="2">
+              2 travellers
+            </option>
+
+            <option value="3">
+              3 travellers
+            </option>
+
+            <option value="4">
+              4 travellers
+            </option>
+
+            <option value="5">
+              5 travellers
+            </option>
+
+            <option value="6">
+              6 travellers
+            </option>
+
           </select>
+
         </div>
+
       </div>
 
-      <div className="search-field">
-        <span className="search-icon">₹</span>
 
-        <div>
-          <label>Budget</label>
-
-          <select
-            value={budget}
-            onChange={(event) =>
-              setBudget(event.target.value)
-            }
-          >
-            <option value="">Any budget</option>
-            <option value="10000">Under ₹10,000</option>
-            <option value="25000">Under ₹25,000</option>
-            <option value="50000">Under ₹50,000</option>
-            <option value="100000">Under ₹1,00,000</option>
-          </select>
-        </div>
-      </div>
-
-      <button className="search-button" type="submit">
+      <button
+        type="submit"
+        className="search-button"
+      >
         Search
       </button>
 

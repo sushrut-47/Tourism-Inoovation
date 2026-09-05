@@ -1,0 +1,363 @@
+.booking-page {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 40px 24px 80px;
+}
+
+
+/* Header */
+
+.booking-header {
+  margin-bottom: 30px;
+}
+
+.booking-label {
+  color: #f97316;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.booking-header h1 {
+  margin: 8px 0;
+
+  font-size: 34px;
+}
+
+.booking-header p {
+  margin: 0;
+
+  color: #666;
+}
+
+
+/* Layout */
+
+.booking-layout {
+  display: grid;
+
+  grid-template-columns: 1fr 360px;
+
+  gap: 25px;
+
+  align-items: start;
+}
+
+
+/* Form card */
+
+.booking-card {
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  padding: 25px;
+
+  margin-bottom: 20px;
+}
+
+
+/* Section title */
+
+.booking-section-title {
+  display: flex;
+
+  gap: 12px;
+
+  align-items: flex-start;
+
+  margin-bottom: 25px;
+}
+
+.booking-section-title > span {
+  font-size: 24px;
+}
+
+.booking-section-title h2 {
+  margin: 0 0 5px;
+
+  font-size: 20px;
+}
+
+.booking-section-title p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+
+/* Form */
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+
+  margin-bottom: 18px;
+}
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.form-group label {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #f97316;
+
+  box-shadow: 0 0 0 2px
+    rgba(249, 115, 22, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+
+/* Continue button */
+
+.continue-booking-btn {
+  width: 100%;
+
+  padding: 15px;
+
+  background: #f97316;
+
+  color: #ffffff;
+
+  border: none;
+
+  border-radius: 9px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.continue-booking-btn:hover {
+  background: #ea580c;
+}
+
+
+/* Summary */
+
+.booking-summary {
+  position: sticky;
+
+  top: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  padding: 25px;
+
+  box-shadow: 0 5px 20px
+    rgba(0, 0, 0, 0.06);
+}
+
+.summary-header span {
+  color: #f97316;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.summary-header h2 {
+  margin: 8px 0 5px;
+
+  font-size: 23px;
+}
+
+.summary-header p {
+  margin: 0;
+
+  color: #666;
+}
+
+
+/* Divider */
+
+.summary-divider {
+  height: 1px;
+
+  background: #e5e7eb;
+
+  margin: 20px 0;
+}
+
+
+/* Summary items */
+
+.summary-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 9px 0;
+
+  font-size: 14px;
+}
+
+.summary-item span {
+  color: #555;
+}
+
+.summary-item strong {
+  color: #222;
+}
+
+
+/* Total */
+
+.summary-total {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.summary-total span {
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+.summary-total strong {
+  color: #ea580c;
+
+  font-size: 24px;
+}
+
+
+/* Secure booking */
+
+.secure-booking {
+  margin-top: 20px;
+
+  padding: 12px;
+
+  background: #f0fdf4;
+
+  border-radius: 8px;
+
+  text-align: center;
+
+  color: #15803d;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* Back */
+
+.back-to-package {
+  width: 100%;
+
+  margin-top: 15px;
+
+  padding: 10px;
+
+  background: transparent;
+
+  border: none;
+
+  color: #666;
+
+  cursor: pointer;
+}
+
+.back-to-package:hover {
+  color: #f97316;
+}
+
+
+/* Tablet */
+
+@media (max-width: 850px) {
+
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-summary {
+    position: static;
+
+    order: -1;
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .booking-page {
+    padding: 25px 15px 60px;
+  }
+
+  .booking-header h1 {
+    font-size: 28px;
+  }
+
+  .booking-card {
+    padding: 18px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+}

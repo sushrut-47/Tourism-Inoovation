@@ -1,6 +1,4 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -10,19 +8,28 @@ html {
 
 body {
   margin: 0;
+
   font-family:
     Inter,
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
     sans-serif;
+
   background: #ffffff;
-  color: #1f2937;
+  color: #102a43;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
 }
 
@@ -30,7 +37,11 @@ button {
   cursor: pointer;
 }
 
+img {
+  max-width: 100%;
+}
+
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
